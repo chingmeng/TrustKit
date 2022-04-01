@@ -51,6 +51,10 @@
                                              {
                                                  session = RSSWCallOriginal(configuration, delegate, queue);
                                              }
+                                             else if ([NSStringFromClass([delegate class]) hasPrefix:@"GDTCCTUploadOperation"])
+                                             {
+                                                 session = RSSWCallOriginal(configuration, delegate, queue);
+                                             }
                                              else
                                              {
                                                  // Replace the delegate with our own so we can intercept and handle authentication challenges
